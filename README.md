@@ -1,6 +1,6 @@
 # Cursor Chat History Export Tool
 
-A Python script to export Cursor chat history to markdown and HTML formats. This is a Python equivalent of the original JavaScript `cursor_export.js` file.
+A Python script to export Cursor chat history to markdown and HTML formats.
 
 ## Features
 
@@ -22,11 +22,13 @@ A Python script to export Cursor chat history to markdown and HTML formats. This
 ## Installation
 
 1. Install the required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 2. Make the script executable (optional):
+
 ```bash
 chmod +x cursor_export.py
 ```
@@ -40,6 +42,7 @@ python cursor_export.py <input_path> <output_dir>
 ```
 
 **Parameters:**
+
 - `input_path`: Path to either:
   - A Cursor chat history JSON file, OR
   - The Cursor workspace storage directory (e.g., `~/Library/Application Support/Cursor/User/workspaceStorage`)
@@ -48,16 +51,19 @@ python cursor_export.py <input_path> <output_dir>
 ### Examples
 
 **From workspace storage directory (recommended):**
+
 ```bash
 python cursor_export.py "/Users/username/Library/Application Support/Cursor/User/workspaceStorage" ./exports
 ```
 
 **From JSON file:**
+
 ```bash
 python cursor_export.py chat_history.json ./exports
 ```
 
 **macOS typical workspace storage location:**
+
 ```bash
 python cursor_export.py "$HOME/Library/Application Support/Cursor/User/workspaceStorage" ./cursor_exports
 ```
@@ -65,16 +71,19 @@ python cursor_export.py "$HOME/Library/Application Support/Cursor/User/workspace
 ### Finding Your Cursor Workspace Storage Directory
 
 **macOS:**
+
 ```bash
 ~/Library/Application Support/Cursor/User/workspaceStorage
 ```
 
 **Windows:**
+
 ```bash
 %APPDATA%\Cursor\User\workspaceStorage
 ```
 
 **Linux:**
+
 ```bash
 ~/.config/Cursor/User/workspaceStorage
 ```
@@ -100,17 +109,20 @@ exports/
 ## Output Formats
 
 ### Markdown Files
+
 - Clean markdown format with workspace info, timestamps, and chat content
 - Code blocks are properly formatted with syntax highlighting markers
 - Organized by workspace and conversation
 
 ### HTML Files
+
 - GitHub-style CSS styling
 - Responsive design that works on mobile devices
 - Syntax highlighting for code blocks
 - Professional appearance suitable for sharing
 
 ### JSON Files
+
 - Structured data format for programmatic access
 - Contains all conversation metadata
 - Useful for further processing or analysis
@@ -118,6 +130,7 @@ exports/
 ## Error Handling
 
 The script includes comprehensive error handling for:
+
 - Invalid JSON input files
 - Missing input files
 - File system permissions
@@ -140,16 +153,6 @@ The script includes comprehensive error handling for:
 - `export_chat_tab()`: Exports individual chat conversations
 - `export_composer()`: Exports composer conversations
 
-## Differences from JavaScript Version
-
-This Python version maintains the same functionality as the original JavaScript version but includes:
-- Type hints for better code documentation
-- More robust error handling
-- Better cross-platform path handling using `pathlib`
-- Cleaner code structure with proper Python conventions
-- Command-line interface for easier usage
-
 ## License
 
 This tool is provided as-is for exporting Cursor chat history data.
-
